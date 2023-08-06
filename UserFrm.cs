@@ -54,7 +54,7 @@ namespace MedicalGroup7
         private void LoadData()
         {
             var medicals = appointmentProvider.GetMedicalAppointmentByUserID(UserMedical.UserID);
-            dgAppointment.DataSource = medicals;
+            dgAppointment.DataSource = medicals.Select(m => new { m.Descripcion, m.FechaCita, m.Especialidad, m.Clinica, m.Direccion}).OrderByDescending(m => m.FechaCita).ToList();
             dgAppointment.Refresh();
         }
 
