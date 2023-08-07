@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalGroup7", "MedicalGroup7\MedicalGroup7.csproj", "{FFCAC664-EEAA-46C4-9884-21EFA3871716}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalGroup7.Repository", "MedicalGroup7.Repository\MedicalGroup7.Repository.csproj", "{3771BC4D-FC78-4D22-83D7-FF563E9F1C81}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MedicalGroup7.Core", "MedicalGroup7.Core\MedicalGroup7.Core.csproj", "{72DA3254-D216-4015-9374-0F7E2298078F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Scripts", "Scripts", "{F37E8052-BC1A-4520-AF0C-2CE13A986376}"
+	ProjectSection(SolutionItems) = preProject
+		D:\Docs\Scripts\MedicalGroup7\1-CreateDatabase.sql = D:\Docs\Scripts\MedicalGroup7\1-CreateDatabase.sql
+		D:\Docs\Scripts\MedicalGroup7\2-CreateTables.sql = D:\Docs\Scripts\MedicalGroup7\2-CreateTables.sql
+		D:\Docs\Scripts\MedicalGroup7\3-InsertInitialData.sql = D:\Docs\Scripts\MedicalGroup7\3-InsertInitialData.sql
+		D:\Docs\Scripts\MedicalGroup7\4-CreateViews.sql = D:\Docs\Scripts\MedicalGroup7\4-CreateViews.sql
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FFCAC664-EEAA-46C4-9884-21EFA3871716}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FFCAC664-EEAA-46C4-9884-21EFA3871716}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FFCAC664-EEAA-46C4-9884-21EFA3871716}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FFCAC664-EEAA-46C4-9884-21EFA3871716}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3771BC4D-FC78-4D22-83D7-FF563E9F1C81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3771BC4D-FC78-4D22-83D7-FF563E9F1C81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3771BC4D-FC78-4D22-83D7-FF563E9F1C81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3771BC4D-FC78-4D22-83D7-FF563E9F1C81}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72DA3254-D216-4015-9374-0F7E2298078F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72DA3254-D216-4015-9374-0F7E2298078F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72DA3254-D216-4015-9374-0F7E2298078F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72DA3254-D216-4015-9374-0F7E2298078F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E7A8FE8-6A85-4190-9E12-A6314D2CA0AE}
+	EndGlobalSection
+EndGlobal

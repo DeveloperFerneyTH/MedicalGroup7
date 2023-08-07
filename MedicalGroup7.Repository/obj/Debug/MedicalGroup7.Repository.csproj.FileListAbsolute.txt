@@ -1,0 +1,12 @@
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\bin\Debug\MedicalGroup7.Repository.dll.config
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\bin\Debug\MedicalGroup7.Repository.dll
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\bin\Debug\MedicalGroup7.Repository.pdb
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\bin\Debug\EntityFramework.dll
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\bin\Debug\EntityFramework.SqlServer.dll
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\bin\Debug\EntityFramework.xml
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\bin\Debug\EntityFramework.SqlServer.xml
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\obj\Debug\MedicalGroup7.Repository.csproj.AssemblyReference.cache
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\obj\Debug\MedicalGroup7.Repository.csproj.CoreCompileInputs.cache
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\obj\Debug\MedicalGroup7.Repository.csproj.CopyComplete
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\obj\Debug\MedicalGroup7.Repository.dll
+C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Repository\obj\Debug\MedicalGroup7.Repository.pdb

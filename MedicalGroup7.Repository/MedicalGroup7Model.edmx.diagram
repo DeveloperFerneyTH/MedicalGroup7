@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6f8a332622824d6eaee5da0e487162c9" Name="Diagram1">
+        <EntityTypeShape EntityType="MedicalGroup7Model.MedicalAppointment" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalGroup7Model.MedicalSpecialty" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalGroup7Model.Place" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalGroup7Model.Role" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalGroup7Model.sysdiagram" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MedicalGroup7Model.User" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="MedicalGroup7Model.FK__MedicalAp__Medic__5535A963" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalGroup7Model.FK__MedicalAp__Place__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalGroup7Model.FK__MedicalAp__UserI__5441852A" ManuallyRouted="false" />
+        <AssociationConnector Association="MedicalGroup7Model.FK__User__RoleID__5070F446" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="MedicalGroup7Model.MedicalAppView" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

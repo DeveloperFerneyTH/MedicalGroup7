@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicalGroup7Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="MedicalAppointment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="MedicalDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="MedicalSpID" Type="Int32" />
+    <Property Name="PlaceID" Type="Int32" />
+    <NavigationProperty Name="MedicalSpecialty" Relationship="Self.FK__MedicalAp__Medic__5535A963" FromRole="MedicalAppointment" ToRole="MedicalSpecialty" />
+    <NavigationProperty Name="Place" Relationship="Self.FK__MedicalAp__Place__5629CD9C" FromRole="MedicalAppointment" ToRole="Place" />
+    <NavigationProperty Name="User" Relationship="Self.FK__MedicalAp__UserI__5441852A" FromRole="MedicalAppointment" ToRole="User" />
+  </EntityType>
+  <EntityType Name="MedicalSpecialty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="MedicalAppointments" Relationship="Self.FK__MedicalAp__Medic__5535A963" FromRole="MedicalSpecialty" ToRole="MedicalAppointment" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="City" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="MedicalAppointments" Relationship="Self.FK__MedicalAp__Place__5629CD9C" FromRole="Place" ToRole="MedicalAppointment" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="120" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Users" Relationship="Self.FK__User__RoleID__5070F446" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FirtName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="70" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Created" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RoleID" Type="Int32" />
+    <NavigationProperty Name="MedicalAppointments" Relationship="Self.FK__MedicalAp__UserI__5441852A" FromRole="User" ToRole="MedicalAppointment" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__User__RoleID__5070F446" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <Association Name="FK__MedicalAp__Medic__5535A963">
+    <End Role="MedicalSpecialty" Type="Self.MedicalSpecialty" Multiplicity="0..1" />
+    <End Role="MedicalAppointment" Type="Self.MedicalAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalSpecialty">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedicalAppointment">
+        <PropertyRef Name="MedicalSpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MedicalAp__Place__5629CD9C">
+    <End Role="Place" Type="Self.Place" Multiplicity="0..1" />
+    <End Role="MedicalAppointment" Type="Self.MedicalAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedicalAppointment">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MedicalAp__UserI__5441852A">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MedicalAppointment" Type="Self.MedicalAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedicalAppointment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleID__5070F446">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicalGroup7Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="MedicalAppointments" EntityType="Self.MedicalAppointment" />
+    <EntitySet Name="MedicalSpecialties" EntityType="Self.MedicalSpecialty" />
+    <EntitySet Name="Places" EntityType="Self.Place" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__MedicalAp__Medic__5535A963" Association="Self.FK__MedicalAp__Medic__5535A963">
+      <End Role="MedicalSpecialty" EntitySet="MedicalSpecialties" />
+      <End Role="MedicalAppointment" EntitySet="MedicalAppointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MedicalAp__Place__5629CD9C" Association="Self.FK__MedicalAp__Place__5629CD9C">
+      <End Role="Place" EntitySet="Places" />
+      <End Role="MedicalAppointment" EntitySet="MedicalAppointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MedicalAp__UserI__5441852A" Association="Self.FK__MedicalAp__UserI__5441852A">
+      <End Role="User" EntitySet="Users" />
+      <End Role="MedicalAppointment" EntitySet="MedicalAppointments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleID__5070F446" Association="Self.FK__User__RoleID__5070F446">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="User" EntitySet="Users" />
+    </AssociationSet>
+    <EntitySet Name="MedicalAppViews" EntityType="MedicalGroup7Model.MedicalAppView" />
+  </EntityContainer>
+  <EntityType Name="MedicalAppView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="MedicalDate" />
+      <PropertyRef Name="MedSpecialty" />
+      <PropertyRef Name="Place" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="MedicalDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="UserID" Type="Int32" />
+    <Property Name="MedSpecialty" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Place" Type="String" Nullable="false" MaxLength="120" FixedLength="false" Unicode="false" />
+    <Property Name="Address" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+</Schema>

@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MedicalGroup7Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="MedicalAppointment">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="MedicalDate" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="MedicalSpID" Type="int" />
+    <Property Name="PlaceID" Type="int" />
+  </EntityType>
+  <EntityType Name="MedicalSpecialty">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="120" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+    <Property Name="City" Type="varchar" MaxLength="80" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="120" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirtName" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="LastName" Type="varchar" MaxLength="70" Nullable="false" />
+    <Property Name="Email" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="Password" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="Created" Type="datetime" Nullable="false" />
+    <Property Name="RoleID" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'MedicalGroup7.dbo.MedicalAppView' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="MedicalAppView">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="MedicalDate" />
+      <PropertyRef Name="MedSpecialty" />
+      <PropertyRef Name="Place" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="MedicalDate" Type="datetime" Nullable="false" />
+    <Property Name="UserID" Type="int" />
+    <Property Name="MedSpecialty" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Place" Type="varchar" MaxLength="120" Nullable="false" />
+    <Property Name="Address" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <Association Name="FK__MedicalAp__Medic__5535A963">
+    <End Role="MedicalSpecialty" Type="Self.MedicalSpecialty" Multiplicity="0..1" />
+    <End Role="MedicalAppointment" Type="Self.MedicalAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedicalSpecialty">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedicalAppointment">
+        <PropertyRef Name="MedicalSpID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MedicalAp__Place__5629CD9C">
+    <End Role="Place" Type="Self.Place" Multiplicity="0..1" />
+    <End Role="MedicalAppointment" Type="Self.MedicalAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedicalAppointment">
+        <PropertyRef Name="PlaceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MedicalAp__UserI__5441852A">
+    <End Role="User" Type="Self.User" Multiplicity="0..1" />
+    <End Role="MedicalAppointment" Type="Self.MedicalAppointment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedicalAppointment">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__User__RoleID__5070F446">
+    <End Role="Role" Type="Self.Role" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="RoleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MedicalGroup7ModelStoreContainer">
+    <EntitySet Name="MedicalAppointment" EntityType="Self.MedicalAppointment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicalSpecialty" EntityType="Self.MedicalSpecialty" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedicalAppView" EntityType="Self.MedicalAppView" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [MedicalAppView].[ID] AS [ID], 
+    [MedicalAppView].[Name] AS [Name], 
+    [MedicalAppView].[MedicalDate] AS [MedicalDate], 
+    [MedicalAppView].[UserID] AS [UserID], 
+    [MedicalAppView].[MedSpecialty] AS [MedSpecialty], 
+    [MedicalAppView].[Place] AS [Place], 
+    [MedicalAppView].[Address] AS [Address]
+    FROM [dbo].[MedicalAppView] AS [MedicalAppView]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="FK__MedicalAp__Medic__5535A963" Association="Self.FK__MedicalAp__Medic__5535A963">
+      <End Role="MedicalSpecialty" EntitySet="MedicalSpecialty" />
+      <End Role="MedicalAppointment" EntitySet="MedicalAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MedicalAp__Place__5629CD9C" Association="Self.FK__MedicalAp__Place__5629CD9C">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="MedicalAppointment" EntitySet="MedicalAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MedicalAp__UserI__5441852A" Association="Self.FK__MedicalAp__UserI__5441852A">
+      <End Role="User" EntitySet="User" />
+      <End Role="MedicalAppointment" EntitySet="MedicalAppointment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__User__RoleID__5070F446" Association="Self.FK__User__RoleID__5070F446">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
