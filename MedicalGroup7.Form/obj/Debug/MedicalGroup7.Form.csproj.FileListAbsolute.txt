@@ -1,4 +1,0 @@
-C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Form\obj\Debug\MedicalGroup7.Form.csproj.AssemblyReference.cache
-C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Form\obj\Debug\MedicalGroup7.Form.Properties.Resources.resources
-C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Form\obj\Debug\MedicalGroup7.Form.csproj.GenerateResource.cache
-C:\Code\Universidad\MedicalGroup7\MedicalGroup7.Form\obj\Debug\MedicalGroup7.Form.csproj.CoreCompileInputs.cache
