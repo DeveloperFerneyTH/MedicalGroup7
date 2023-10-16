@@ -4,12 +4,8 @@ using MedicalGroup7.Repository;
 using MedicalGroup7.Repository.Repositories;
 using Moq;
 using NUnit.Framework;
-using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MedicalGroup7.Core.Tests.Providers
 {
