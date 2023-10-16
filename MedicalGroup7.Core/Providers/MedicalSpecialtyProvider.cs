@@ -12,7 +12,7 @@ namespace MedicalGroup7.Core.Providers
 
         public MedicalSpecialtyProvider()
         {
-            repository = new MedicalSpecialtyRepository();
+            repository = new MedicalSpecialtyRepositoryImpl();
         }
 
         public List<MedSpecialty> GetSpecialties()

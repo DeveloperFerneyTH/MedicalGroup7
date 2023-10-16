@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "eean/dd17EG/MIl7VhdQcm0Ch6S10cScIvtlimc10WNo0q60iuWV//frEPI1DBTS40JDWsN6nYIv55lys6Zrug==",
+  "success": true,
+  "projectFilePath": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core.Tests\\MedicalGroup7.Core.Tests.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.codecoverage\\16.5.0\\microsoft.codecoverage.16.5.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\microsoft.net.test.sdk\\16.5.0\\microsoft.net.test.sdk.16.5.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\moq\\4.2.1510.2205\\moq.4.2.1510.2205.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\nunit\\3.12.0\\nunit.3.12.0.nupkg.sha512",
+    "C:\\Users\\ASUS\\.nuget\\packages\\nunit3testadapter\\3.16.1\\nunit3testadapter.3.16.1.nupkg.sha512"
+  ],
+  "logs": []
+}

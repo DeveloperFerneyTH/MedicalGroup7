@@ -1,0 +1,107 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core.Tests\\MedicalGroup7.Core.Tests.csproj": {}
+  },
+  "projects": {
+    "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core.Tests\\MedicalGroup7.Core.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core.Tests\\MedicalGroup7.Core.Tests.csproj",
+        "projectName": "MedicalGroup7.Core.Tests",
+        "projectPath": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core.Tests\\MedicalGroup7.Core.Tests.csproj",
+        "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
+        "outputPath": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net45"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net45": {
+            "targetAlias": "net45",
+            "projectReferences": {
+              "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core\\MedicalGroup7.Core.csproj": {
+                "projectPath": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core\\MedicalGroup7.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net45": {
+          "targetAlias": "net45",
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.5.0, )"
+            },
+            "Moq": {
+              "target": "Package",
+              "version": "[4.2.1510.2205, )"
+            },
+            "NUnit": {
+              "target": "Package",
+              "version": "[3.12.0, )"
+            },
+            "NUnit3TestAdapter": {
+              "target": "Package",
+              "version": "[3.16.1, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core\\MedicalGroup7.Core.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core\\MedicalGroup7.Core.csproj",
+        "projectName": "MedicalGroup7.Core",
+        "projectPath": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Core\\MedicalGroup7.Core.csproj",
+        "frameworks": {
+          "net45": {
+            "projectReferences": {
+              "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Repository\\MedicalGroup7.Repository.csproj": {
+                "projectPath": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Repository\\MedicalGroup7.Repository.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    },
+    "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Repository\\MedicalGroup7.Repository.csproj": {
+      "restore": {
+        "projectUniqueName": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Repository\\MedicalGroup7.Repository.csproj",
+        "projectName": "MedicalGroup7.Repository",
+        "projectPath": "C:\\Code\\Universidad\\MedicalGroup7\\MedicalGroup7.Repository\\MedicalGroup7.Repository.csproj",
+        "frameworks": {
+          "net45": {
+            "projectReferences": {}
+          }
+        }
+      },
+      "frameworks": {
+        "net45": {}
+      }
+    }
+  }
+}

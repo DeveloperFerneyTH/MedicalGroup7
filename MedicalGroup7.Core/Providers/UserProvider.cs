@@ -1,6 +1,7 @@
 ﻿using MedicalGroup7.Core.Domain;
 using MedicalGroup7.Core.Domain.Mappers;
 using MedicalGroup7.Repository.Providers;
+using MedicalGroup7.Repository.Repositories;
 using System;
 
 namespace MedicalGroup7.Core.Providers
@@ -12,7 +13,7 @@ namespace MedicalGroup7.Core.Providers
 		public UserProvider()
 		{
 
-			repository = new UsersRepository();
+			repository = new UsersRepositoryImpl();
 		}
 
 		public UserMedical Login(string email, string password)

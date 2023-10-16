@@ -12,7 +12,7 @@ namespace MedicalGroup7.Core.Providers
 
         public MedicalAppointmentProvider()
         {
-            repository = new MedicalAppointmentRepository();
+            repository = new MedicalAppointmentRepositoryImpl();
         }
 
         public List<MedicalAppointmentVw> GetMedicalAppointmentByUserID(int userID)
@@ -32,7 +32,7 @@ namespace MedicalGroup7.Core.Providers
         {
             try
             {
-                repository.CreateMedicalAppintment(MedicalAppointmentMapper.ViewToRepository(medical));
+                repository.CreateMedicalAppointment(MedicalAppointmentMapper.ViewToRepository(medical));
             }
             catch (MedicalAppointmentProviderException ex)
             {

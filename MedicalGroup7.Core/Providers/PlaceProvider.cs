@@ -12,7 +12,7 @@ namespace MedicalGroup7.Core.Providers
 
         public PlaceProvider()
         {
-            repository = new PlaceRepository();
+            repository = new PlaceRepositoryImpl();
         }
 
         public List<PlaceMedical> GetPlaces()
